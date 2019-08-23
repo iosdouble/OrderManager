@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Haiyan工单管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="stylesheet" th:href="@{/bower_components/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/adminlte-2.3.7/css/AdminLTE.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/adminlte-2.3.7/css/skins/_all-skins.min.css}"  />
+    <link rel="stylesheet" th:href="@{bower_components/toastr/toastr.min.css}">
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue login-page" target="_top">
+<div class="login-box">
+    <div class="login-logo">
+        <b>Haiyan工单查询</b>
+    </div>
+    <div class="login-box-body">
+        <h3 class="text-center">管理员登陆</h3>
+       <!-- <form action="/login" method="post"> -->
+       <form id="loginForm" >
+            <div class="form-group has-feedback">
+                <input type="text" name="username" id="username" class="form-control" placeholder="username" />
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-primary btn-block btn-flat" onclick="loginSubmit()">登录</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script th:src="@{/bower_components/jquery/dist/jquery.min.js}"></script>
+<script th:src="@{/bower_components/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{bower_components/toastr/toastr.min.js}"></script>
+<script th:src="@{/js/utils/requestUtil.js}"></script>
+<script th:src="@{/js/utils/sha.js}"></script>
+<script th:src="@{/js/login.js}"></script>
+</body>
+</html>

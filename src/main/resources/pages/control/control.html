@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="header">
+</head>
+<body>
+	<section class="content table-content">
+		<h2 class="sub-header">工单查询</h2>
+		<label class="control-label" for="gid">工单分组</label>
+            <select class="selectpicker form-control" data-live-search="true" id="gid" onchange=selectGid()>
+                <option data-tokens="ketchup mustard">ALL</option>
+            </select>
+		<div class="table-responsive">
+			<table id="appRecords"
+				class="table table-bordered table-hover table-condensed flow-table-hover mon-table"
+				width="100%">
+			</table>
+		</div>
+	</section>
+	<div th:include="footer"></div>
+</body>
+<script th:src="@{/js/control.js}"></script>
+</html>

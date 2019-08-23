@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="header">
+</head>
+<body>
+	<section class="content table-content">
+		<h2 class="sub-header">流水查询</h2>
+		<div class="form-group ">
+			<div class="col-md-6">
+				<label for="startDate_input" class="control-label col-md-3">起始时间:</label>
+				<div class="input-group date form_date col-md-5"
+					data-link-field="startDate_input" data-link-format="yyyy-mm-dd">
+					<input class="form-control" size="16" type="text" value="" readonly>
+					<span class="input-group-addon"><span
+						class="glyphicon glyphicon-remove"></span></span> <span
+						class="input-group-addon"><span
+						class="glyphicon glyphicon-calendar"></span></span>
+				</div>
+				<input type="hidden" id="startDate_input" value="" />
+			</div>
+			<div class="col-md-6">
+				<label for="endDate_input" class=" control-label col-md-3">结束时间:</label>
+				<div class="input-group date form_date  col-md-5"
+					data-link-field="endDate_input" data-link-format="yyyy-mm-dd">
+					<input class="form-control" size="16" type="text" value="" readonly>
+					<span class="input-group-addon"><span
+						class="glyphicon glyphicon-remove"></span></span> <span
+						class="input-group-addon"><span
+						class="glyphicon glyphicon-calendar"></span></span>
+				</div>
+				<input type="hidden" id="endDate_input" value="" />
+			</div>
+		</div>
+		<br />
+		<br />
+		<div class="form-group ">
+			<!-- ESB流水号，全局流水号，流水位置，响应状态，响应码，请求方，服务方 -->
+			<div class="input-group  col-md-12">
+				<div class="col-md-6">
+					<label for="esbFlowNo_input" class="col-md-3 control-label">ESB流水号：</label>
+					<input id="esbFlowNo_input" type="text" class="col-md-5">
+				</div>
+				<div class="col-md-6">
+					<label for="reqFlowNo_input" class="col-md-3 control-label">全局流水号：</label>
+					<input id="reqFlowNo_input" type="text" class="col-md-5">
+				</div>
+			</div>
+		</div>
+		<div class="form-group ">
+			<div class="input-group  col-md-12">
+				<div class="col-md-6">
+					<label for="flowStepID_input" class="col-md-3 control-label">流水位置：</label>
+					<input id="flowStepID_input" type="text" class="col-md-5">
+				</div>
+				<div class="col-md-6">
+					<label for="respStatus_input" class="col-md-3 control-label">响应状态：</label>
+					<input id="respStatus_input" type="text" class="col-md-5">
+				</div>
+			</div>
+		</div>
+		<div class="form-group ">
+			<div class="input-group  col-md-12">
+				<div class="col-md-6">
+					<label for="realChannel_input" class="col-md-3 control-label">请求方：</label>
+					<input id="realChannel_input" type="text" class="col-md-5">
+				</div>
+				<div class="col-md-6">
+					<label for="realSystem_input" class="col-md-3 control-label">服务方：</label>
+					<input id="realSystem_input" type="text" class="col-md-5">
+				</div>
+			</div>
+		</div>
+		<div class="form-group ">
+			<div class="input-group  col-md-12">
+				<div class="col-md-6">
+					<label for="txntlrno_input" class="col-md-3 control-label">交易码：</label>
+					<input id="txntlrno_input" type="text" class="col-md-5">
+				</div>
+				<div class="col-md-6">
+					<label for="dstcno_input" class="col-md-3 control-label">交易柜员：</label>
+					<input id="dstcno_input" type="text" class="col-md-5">
+				</div>
+			</div>
+		</div>
+		<div class="form-group ">
+			<div class="input-group  col-md-12">
+				<div class="col-md-6">
+					<label for="instno_input" class="col-md-3 control-label">机构代号：</label>
+					<input id="instno_input" type="text" class="col-md-5">
+				</div>
+				<div class="col-md-6">
+					<label for="respCode_input" class="col-md-3 control-label">响应码：</label>
+					<input id="respCode_input" type="text" class="col-md-5">
+				</div>
+			</div>
+		</div>
+		<div class="form-group ">
+			<div class="input-group  col-md-12">
+				<div class="col-md-6">
+					<button id="btn_journalQuery" class="col-md-2  btn btn-default"
+						type="button">查询</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-8" id="toolbar"></div>
+		<div class="table-responsive">
+			<table id="journalRecords"
+				class="table table-bordered table-hover table-condensed flow-table-hover mon-table">
+			</table>
+		</div>
+		<div class="modal fade" id="message" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">×</span></button>
+						<h4 class="modal-title" id="myModalLabel">报文</h4>
+					</div>
+					<div class="modal-body" style="height:420px">
+						<div class="form-group">
+							<textarea class="form-control" id="pkgcontent2" style="height:390px">"+value+"</textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal"><span
+								class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div th:include="footer"></div>
+</body>
+<script th:src="@{/js/journal.js}"></script>
+</html>

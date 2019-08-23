@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="header">
+</head>
+<body>
+	<section class="content table-content">
+		<h2 class="sub-header">交易时间分布</h2>
+		<div class="form-group ">
+			<div class="input-group ">
+				<div class="col-md-5">
+					<label for="startDate_input" class="control-label col-md-4">起始时间:</label>
+					<div class="input-group date form_date col-md-8"
+						data-link-field="startDate_input" data-link-format="yyyy-mm-dd">
+						<input class="form-control" size="16" type="text" value=""
+							readonly> <span class="input-group-addon"><span
+							class="glyphicon glyphicon-remove"></span></span> <span
+							class="input-group-addon"><span
+							class="glyphicon glyphicon-calendar"></span></span>
+					</div>
+					<input type="hidden" id="startDate_input" value="" />
+				</div>
+				<div class="col-md-5">
+					<label for="endDate_input" class=" control-label col-md-4">结束时间:</label>
+					<div class="input-group date form_date  col-md-8"
+						data-link-field="endDate_input" data-link-format="yyyy-mm-dd">
+						<input class="form-control" size="16" type="text" value=""
+							readonly> <span class="input-group-addon"><span
+							class="glyphicon glyphicon-remove"></span></span> <span
+							class="input-group-addon"><span
+							class="glyphicon glyphicon-calendar"></span></span>
+					</div>
+					<input type="hidden" id="endDate_input" value="" />
+				</div>
+				<div class="col-md-2">
+					<button id="btn_timeQuery" class="col-md-6 btn btn-default"
+						type="button">查询</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-8" id="toolbar"></div>
+		<div class="table-responsive">
+			<table id="timeReport"
+				class="table table-bordered table-hover table-condensed flow-table-hover mon-table">
+			</table>
+		</div>
+	</section>
+	<div th:include="footer"></div>
+</body>
+<script th:src="@{/js/timeReport.js}"></script>
+
+</html>

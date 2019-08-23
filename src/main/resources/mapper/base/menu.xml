@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nh.haiyan.ordermanager.mybatis.dao.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.nh.haiyan.ordermanager.bean.Menu">
+        <id column="menu_id" jdbcType="VARCHAR" property="menuId"></id>
+        <result column="menu_name" jdbcType="VARCHAR" property="menuName"/>
+        <result column="menu_type" jdbcType="VARCHAR" property="menuType"/>
+        <result column="menu_url" jdbcType="VARCHAR" property="menuUrl"/>
+        <result column="menu_code" jdbcType="VARCHAR" property="menuCode"/>
+        <result column="parent_id" jdbcType="VARCHAR" property="parentId"/>
+        <result column="parent_ids" jdbcType="VARCHAR" property="parentIds"/>
+        <result column="child_num" jdbcType="INTEGER" property="childsNum"/>
+        <result column="listorder" jdbcType="INTEGER" property="listorder"/>
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate"/>
+        <result column="updated_date" jdbcType="TIMESTAMP" property="updatedDate"/>
+    </resultMap>
+
+    <!--<sql id="menuFiled">-->
+        <!--select m.menu_id,m.menu_name,m.menu_type,m.menu_url,m.menu_code,m.parent_id-->
+    <!--</sql>-->
+
+
+    <select id="selectAllMenu" resultMap="BaseResultMap">
+        select * from menu
+    </select>
+
+    <select id="selectByCondition" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select * from menu where parent_id = #{parentId}
+    </select>
+
+
+</mapper>

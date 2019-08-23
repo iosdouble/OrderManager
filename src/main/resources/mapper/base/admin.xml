@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nh.haiyan.ordermanager.mybatis.dao.mapper.AdminMapper">
+
+    <resultMap id="AdminMap" type="com.nh.haiyan.ordermanager.bean.Admin">
+        <id column="id" jdbcType="INTEGER" property="id"></id>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="public_salt" jdbcType="VARCHAR" property="public_salt"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+    </resultMap>
+
+
+
+    <select id="selectByUsername" parameterType="String" resultMap="AdminMap">
+        select * from user where username = #{useranme}
+    </select>
+
+
+</mapper>

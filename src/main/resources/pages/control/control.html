@@ -6,9 +6,10 @@
 	<section class="content table-content">
 		<h2 class="sub-header">工单查询</h2>
 		<label class="control-label" for="gid">工单分组</label>
-            <select class="selectpicker form-control" data-live-search="true" id="gid" onchange=selectGid()>
-                <option data-tokens="ketchup mustard">ALL</option>
-            </select>
+		<div>
+			<input class="selectpicker form-control" style="width: 96%;display:inline;" data-live-search="true" id="gid" inputmode="">
+			<button onclick="search" th:type="button" style="display:inline;height: 35px">查询</button>
+		</div>
 		<div class="table-responsive">
 			<table id="appRecords"
 				class="table table-bordered table-hover table-condensed flow-table-hover mon-table"

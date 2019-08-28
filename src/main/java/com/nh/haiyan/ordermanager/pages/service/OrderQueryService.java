@@ -17,4 +17,6 @@ public interface OrderQueryService {
     List<GetAllResApplyResp> listAllResApplies(QueryServiceParam queryServiceParam);
 
     PageInfo<GetAllResApplyResp> pageAllResApplies(QueryServiceParam queryServiceParam,int offset,int limit);
+
+    GetAllResApplyResp getResApplyById(String id);
 }

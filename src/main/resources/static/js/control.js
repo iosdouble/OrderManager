@@ -7,6 +7,10 @@ $(function () {
     // oButtonInit.Init();
 });
 
+function search() {
+    
+}
+
 var TableInit = function () {
     var oTableInit = new Object();
     //初始化Table

@@ -44,4 +44,11 @@ public class OrderQueryServiceImpl implements OrderQueryService {
         PageInfo<GetAllResApplyResp> pageInfo = new PageInfo<>(result);
         return pageInfo ;
     }
+
+    @Override
+    public GetAllResApplyResp getResApplyById(String id) {
+        return orderQueryMapperExt.getResApplyById(id);
+    }
+
+
 }

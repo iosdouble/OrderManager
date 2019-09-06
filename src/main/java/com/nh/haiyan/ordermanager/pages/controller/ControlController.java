@@ -44,6 +44,7 @@ public class ControlController {
     @RequestMapping("/getInfoBymoduleTyep")
     public @ResponseBody List<GetAllResApplyResp> pageAllResApplies(){
         QueryServiceParam queryServiceParam = new QueryServiceParam();
+
         queryServiceParam.setModuleType("devops");
         queryServiceParam.setApplyStatus(6);
         queryServiceParam.setDeptCode(124L);

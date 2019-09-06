@@ -13,6 +13,7 @@ import java.util.List;
  * @Date 2019/8/26 11:01 AM
  * @Created by nihui
  */
+@Deprecated
 @Mapper
 public interface OrderQueryMapperExt {
 

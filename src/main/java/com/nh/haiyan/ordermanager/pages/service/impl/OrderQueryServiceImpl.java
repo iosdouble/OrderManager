@@ -17,6 +17,7 @@ import java.util.List;
  * @Date 2019/8/26 11:00 AM
  * @Created by nihui
  */
+@Deprecated
 @Service
 public class OrderQueryServiceImpl implements OrderQueryService {
 

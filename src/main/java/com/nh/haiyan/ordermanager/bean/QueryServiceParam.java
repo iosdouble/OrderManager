@@ -9,6 +9,8 @@ import lombok.Setter;
  * @Date 2019/8/26 10:57 AM
  * @Created by nihui
  */
+
+@Deprecated
 @Setter
 @Getter
 public class QueryServiceParam {

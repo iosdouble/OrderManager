@@ -12,6 +12,7 @@ import java.util.List;
  * @Date 2019/8/26 9:51 AM
  * @Created by nihui
  */
+@Deprecated
 public interface OrderQueryService {
 
     List<GetAllResApplyResp> listAllResApplies(QueryServiceParam queryServiceParam);

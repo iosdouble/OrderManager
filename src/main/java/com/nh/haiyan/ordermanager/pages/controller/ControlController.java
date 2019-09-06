@@ -21,6 +21,7 @@ import java.util.List;
  * @Date 2019/8/23 10:04 AM
  * @Created by nihui
  */
+@Deprecated
 @Controller
 @RequestMapping("/controlController")
 public class ControlController {

@@ -31,9 +31,6 @@ public class PageController {
         return "orderQuery/orderQuery";
     }
 
-
-
-
     @RequestMapping("/welcome")
     public String welcome(){
         return "welcome";

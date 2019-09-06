@@ -73,6 +73,9 @@ public interface OrderQueryMapperExt {
             @Param("applyStatus") Integer applyStatus,
             @Param("startApplyDateTime") String startApplyDateTime,
             @Param("endApplyDateTime") String endApplyDateTime);
+
+
+
     /*id,apply_status,apply_user_name,dept_code*/
     @Select("<script>"+"select id,dept_code,apply_user_name from module_vip_res_apply where id = #{id}"+"</script>")
     public GetAllResApplyResp getResApplyById(String id);

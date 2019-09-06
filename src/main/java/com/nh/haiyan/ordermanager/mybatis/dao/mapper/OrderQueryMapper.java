@@ -9,5 +9,6 @@ import com.nh.haiyan.ordermanager.bean.GetAllResApplyResp;
  * @Created by nihui
  */
 public interface OrderQueryMapper {
-    public GetAllResApplyResp getOrderById(Long id);
+
+    GetAllResApplyResp getOrderById(Long id);
 }

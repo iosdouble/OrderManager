@@ -5,6 +5,8 @@ $(function () {
     // 2.初始化Button的点击事件
     // var oButtonInit = new ButtonInit();
     // oButtonInit.Init();
+    var oButtonInit = new ButtonInit();
+    oButtonInit.Init();
 });
 
 function search() {
@@ -17,7 +19,7 @@ var TableInit = function () {
     oTableInit.Init = function () {
         //指定操作表
         $('#appRecords').bootstrapTable({
-            url: '/controlController/getInfoBymoduleTyep',   //请求后台的URL（*）
+            url: '/orderQuery/getInfoBymoduleTyep',   //请求后台的URL（*）
             method: 'get',                      //请求方式（*）
             toolbar: '#toolbar',                //工具按钮用哪个容器
             striped: true,                      //是否显示行间隔色
@@ -25,7 +27,7 @@ var TableInit = function () {
             pagination: true,                   //是否显示分页（*）
             sortable: false,                     //是否启用排序
             sortOrder: "asc",                   //排序方式
-            // queryParams: oTableInit.queryParams,//传递参数（*）
+            queryParams: oTableInit.queryParams,//传递参数（*）
             sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,                       //初始化加载第一页，默认第一页
             pageSize: 10,                       //每页的记录行数（*）
@@ -87,7 +89,8 @@ var TableInit = function () {
         var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
             limit: params.limit,   //页面大小
             offset: params.offset,  //页码
-            appGroup: $("#gid option:selected").text()//选中的文本
+            orderId:$("#gid").val()
+            // appGroup: $("#gid option:selected").text()//选中的文本
 //            startDate: $("#startDate_input").val(),
 //            endDate: $("#endDate_input").val(),
 //            esbFlowNo: $("#esbFlowNo_input").val(),
@@ -99,32 +102,57 @@ var TableInit = function () {
 //            respCode: $('#respCode_input').val()   
         };
         return temp;
+        console.log("获取到工单号"+temp.orderId)
     };
     return oTableInit;
 };
 
-//获取下拉菜单
-$("#gid").on('shown.bs.select', function (e) {
-    $("#gid").empty();
-    $.ajax({
-        type: "post",
-        url: "/controlController/getSel",
-        dataType: "json",
-        success: function (data) {
-            var depart_list = data;
-            var opts = "<option value=al></option>";
-            opts += "<option value=all>ALL</option>";
-            // var opts = "<option value=all>ALL</option>";
-            for (var depart_index = 0; depart_index < depart_list.length; depart_index++) {
-                var depart = depart_list[depart_index];
-                opts += "<option value='" + depart_index + "'>" + depart + "</option>";
+// //获取下拉菜单
+// $("#gid").on('shown.bs.select', function (e) {
+//     $("#gid").empty();
+//     $.ajax({
+//         type: "post",
+//         url: "/controlController/getSel",
+//         dataType: "json",
+//         success: function (data) {
+//             var depart_list = data;
+//             var opts = "<option value=al></option>";
+//             opts += "<option value=all>ALL</option>";
+//             // var opts = "<option value=all>ALL</option>";
+//             for (var depart_index = 0; depart_index < depart_list.length; depart_index++) {
+//                 var depart = depart_list[depart_index];
+//                 opts += "<option value='" + depart_index + "'>" + depart + "</option>";
+//             }
+//             $("#gid").append(opts);
+//             $("#gid").selectpicker("refresh");//下拉框内容刷新
+//             // $('#gid').selectpicker('render');
+//         }
+//     });
+// })
+
+var ButtonInit = function () {
+    var oInit = new Object();
+    var postdata = {};
+    oInit.Init = function () {
+        $("#btn_journalQuery").click(function () {
+            var orderId = $("#gid").val();
+            console.log("获取到的工单号"+orderId)
+            if (orderId == null || orderId.length == 0) {
+                toastr.warning('工单号不能为空！');
+                return;
             }
-            $("#gid").append(opts);
-            $("#gid").selectpicker("refresh");//下拉框内容刷新
-            // $('#gid').selectpicker('render');
-        }
-    });
-})
+            // var endDate = $("#endDate_input").val();
+            // if (endDate == null || endDate.length == 0) {
+            //     toastr.warning('终止时间不能为空！');
+            //     return;
+            // }
+//    		 $("#journalRecords").bootstrapTable('refresh');
+            $("#appRecords").bootstrapTable('refreshOptions', {pageNumber: 1, pageSize: 10});
+        });
+    };
+    return oInit;
+};
+
 
 //改变下拉框值
 $("#gid").change(function () {

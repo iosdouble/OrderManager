@@ -3,6 +3,8 @@ package com.nh.haiyan.ordermanager.mybatis.dao.mapper;
 import com.nh.haiyan.ordermanager.bean.GetAllResApplyResp;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @Classname OrderQueryMapper
  * @Description TODO
@@ -11,5 +13,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface OrderQueryMapper {
-    GetAllResApplyResp getOrderById(Long id);
+    List<GetAllResApplyResp> getOrderById(Long orderId);
 }

@@ -43,7 +43,7 @@
 			select id,apply_user_code,apply_user_name,apply_date_time,apply_status,'vpnpost' moduleType, dept_code from module_vpn_post_res_apply
 			) tmp
 
-			where tmp.id = #{id}
+			where tmp.id = #{orderId}
     </select>
 
 

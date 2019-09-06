@@ -3,6 +3,7 @@
 <mapper namespace="com.nh.haiyan.ordermanager.mybatis.dao.mapper.OrderQueryMapper">
 
     <select id="getOrderById" parameterType="Long" resultType="com.nh.haiyan.ordermanager.bean.GetAllResApplyResp">
+
       select id resApplyId, apply_user_code applyUserCode, apply_user_name applyUserName, apply_date_time applyDateTime, apply_status applyStatus, moduleType, dept_code deptCode
 	    from(
 			select id, apply_user_code, apply_user_name, apply_date_time, apply_status, 'domain_scan_new' moduleType, dept_code from module_domain_scan_res_apply

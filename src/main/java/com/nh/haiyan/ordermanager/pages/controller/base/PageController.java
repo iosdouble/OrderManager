@@ -28,7 +28,7 @@ public class PageController {
 
     @RequestMapping("/control")
     public String control(){
-        return "control/control";
+        return "orderQuery/orderQuery";
     }
 
 

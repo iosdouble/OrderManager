@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="header">
+</head>
+<body>
+<section class="content table-content">
+    <h2 class="sub-header">工单查询</h2>
+    <label class="control-label" for="did">工单分组</label>
+    <div>
+        <input class="selectpicker form-control" style="width: 96%;display:inline;" data-live-search="true" id="did" inputmode="">
+        <button id="btn_detailQuery" type="button" style="display:inline;height: 35px">查询</button>
+    </div>
+    <div class="table-responsive">
+        <table id="appDetailRecords"
+               class="table table-bordered table-hover table-condensed flow-table-hover mon-table"
+               width="100%">
+        </table>
+    </div>
+</section>
+<div th:include="footer"></div>
+</body>
+<script th:src="@{/js/detailQuery.js}"></script>
+</html>

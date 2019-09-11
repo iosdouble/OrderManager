@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nh.haiyan.ordermanager.mybatis.dao.mapper.DetailQueryMapper">
+
+    <select id="getDetailById" parameterType="Long" resultType="com.nh.haiyan.ordermanager.bean.GetAllResApplyResp">
+		select id,ids,detail,result from(
+            select id, module_app_deploy_res_id as ids, detail, result from module_app_deploy_res_detail
+			UNION
+			select id, module_cdn_cache_clean_res_id as ids, detail, result from module_cdn_cache_clean_res_detail
+			union
+			select id, module_cdn_link_up_res_id as ids, detail, result from module_cdn_link_up_res_detail
+			union
+			select id, module_code_auth_res_id as ids, detail, result from module_code_auth_res_detail
+			union
+			select id, module_code_scan_res_id as ids, detail, result from module_code_scan_res_detail
+			union
+			select id, module_custom_res_id as ids, detail, result from module_custom_res_detail
+			union
+			select id, module_db_res_id as ids, detail, result from module_db_res_detail
+			union
+			select id, module_deploy_res_id as ids, detail, result from module_deploy_res_detail
+			union
+			select id, module_dns_analyze_res_id as ids, detail, result from module_dns_analyze_res_detail
+			union
+			select id, module_domain_account_res_id as ids, detail, result from module_domain_account_res_detail
+			union
+			select id, module_domain_scan_res_id as ids, detail, result from module_domain_scan_res_detail
+			union
+			select id, module_domain_high_defense_res_id as ids, detail, result from module_domain_high_defense_res_detail
+			union
+			select id, module_fortress_machine_res_id as ids, detail, result from module_fortress_machine_res_detail
+			union
+			select id, module_hostscan_res_id as ids, detail, result from module_hostscan_res_detail
+			union
+			select id, module_kvm_res_id as ids, detail, result from module_kvm_res_detail
+			union
+			select id, module_net_security_policy_res_id as ids, detail, result from module_net_security_policy_res_detail
+			union
+			select id, module_nginx_conf_update_res_id as ids, detail, result from module_nginx_conf_update_res_detail
+			union
+			select id, module_port_scan_res_id as ids, detail, result from module_port_scan_res_detail
+			union
+			select id, module_vip_res_id as ids, detail, result from module_vip_res_detail
+			union
+			select id, module_vpn_post_res_id as ids, detail, result from module_vpn_post_res_detail
+
+		)tmp where tmp.id = #{orderId}
+
+    </select>
+</mapper>

@@ -31,6 +31,11 @@ public class PageController {
         return "orderQuery/orderQuery";
     }
 
+    @RequestMapping("/control1")
+    public String control_detail(){
+        return "detailQuery/detailQuery";
+    }
+
     @RequestMapping("/welcome")
     public String welcome(){
         return "welcome";

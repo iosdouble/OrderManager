@@ -1,4 +1,4 @@
-package com.nh.haiyan.ordermanager.pages.controller;
+package com.nh.haiyan.ordermanager.controller;
 
 /**
  * @Classname UserController

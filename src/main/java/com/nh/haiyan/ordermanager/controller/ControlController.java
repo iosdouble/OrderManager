@@ -1,15 +1,14 @@
-package com.nh.haiyan.ordermanager.pages.controller;
+package com.nh.haiyan.ordermanager.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.nh.haiyan.ordermanager.bean.GetAllResApplyResp;
+import com.nh.haiyan.ordermanager.mybatis.model.GetAllResApplyResp;
 import com.nh.haiyan.ordermanager.bean.QueryServiceParam;
-import com.nh.haiyan.ordermanager.pages.service.impl.OrderQueryServiceImpl;
+import com.nh.haiyan.ordermanager.service.impl.OrderQueryServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

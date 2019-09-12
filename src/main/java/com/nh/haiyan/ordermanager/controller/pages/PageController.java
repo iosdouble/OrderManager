@@ -1,4 +1,4 @@
-package com.nh.haiyan.ordermanager.pages.controller.base;
+package com.nh.haiyan.ordermanager.controller.pages;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

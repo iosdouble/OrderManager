@@ -1,4 +1,4 @@
-package com.nh.haiyan.ordermanager.filter;
+package com.nh.haiyan.ordermanager.config.filter;
 
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.springframework.web.servlet.HandlerExceptionResolver;

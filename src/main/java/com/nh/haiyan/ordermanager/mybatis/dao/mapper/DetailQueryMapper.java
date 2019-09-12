@@ -1,7 +1,6 @@
 package com.nh.haiyan.ordermanager.mybatis.dao.mapper;
 
-import com.nh.haiyan.ordermanager.bean.GetAllDetailResp;
-import com.nh.haiyan.ordermanager.bean.GetAllResApplyResp;
+import com.nh.haiyan.ordermanager.mybatis.model.GetAllDetailResp;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -9,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface DetailQueryMapper {
     List<GetAllDetailResp> getDetailById(Long id);
+
+    List<GetAllDetailResp> getAllDetail();
 }

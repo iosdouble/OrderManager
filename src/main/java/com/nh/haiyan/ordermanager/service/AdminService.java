@@ -1,7 +1,6 @@
-package com.nh.haiyan.ordermanager.pages.service;
+package com.nh.haiyan.ordermanager.service;
 
 import com.nh.haiyan.ordermanager.bean.Admin;
-import com.nh.haiyan.ordermanager.bean.UserAdmin;
 
 
 /**

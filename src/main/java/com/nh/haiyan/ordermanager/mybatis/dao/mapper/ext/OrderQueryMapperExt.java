@@ -1,6 +1,6 @@
 package com.nh.haiyan.ordermanager.mybatis.dao.mapper.ext;
 
-import com.nh.haiyan.ordermanager.bean.GetAllResApplyResp;
+import com.nh.haiyan.ordermanager.mybatis.model.GetAllResApplyResp;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

@@ -1,10 +1,10 @@
-package com.nh.haiyan.ordermanager.pages.service.impl;
+package com.nh.haiyan.ordermanager.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.nh.haiyan.ordermanager.bean.GetAllResApplyResp;
+import com.nh.haiyan.ordermanager.mybatis.model.GetAllResApplyResp;
 import com.nh.haiyan.ordermanager.mybatis.dao.mapper.OrderQueryMapper;
-import com.nh.haiyan.ordermanager.pages.service.NewOrderQueryService;
+import com.nh.haiyan.ordermanager.service.NewOrderQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

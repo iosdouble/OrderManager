@@ -1,4 +1,4 @@
-package com.nh.haiyan.ordermanager.bean;
+package com.nh.haiyan.ordermanager.mybatis.model;
 
 import com.nh.haiyan.ordermanager.bean.base.AbsJsonResp;
 import lombok.Getter;

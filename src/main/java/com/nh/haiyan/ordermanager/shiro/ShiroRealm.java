@@ -1,7 +1,7 @@
 package com.nh.haiyan.ordermanager.shiro;
 
 import com.nh.haiyan.ordermanager.bean.Admin;
-import com.nh.haiyan.ordermanager.pages.service.AdminService;
+import com.nh.haiyan.ordermanager.service.AdminService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;

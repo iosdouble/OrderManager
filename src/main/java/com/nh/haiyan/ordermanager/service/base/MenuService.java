@@ -1,4 +1,4 @@
-package com.nh.haiyan.ordermanager.pages.service.base;
+package com.nh.haiyan.ordermanager.service.base;
 
 import com.github.pagehelper.PageHelper;
 import com.nh.haiyan.ordermanager.bean.Menu;

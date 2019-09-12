@@ -1,4 +1,4 @@
-package com.nh.haiyan.ordermanager.pages.service.base;
+package com.nh.haiyan.ordermanager.service.base;
 
 import org.springframework.stereotype.Service;
 

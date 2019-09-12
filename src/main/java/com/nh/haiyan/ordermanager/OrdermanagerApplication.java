@@ -1,6 +1,6 @@
 package com.nh.haiyan.ordermanager;
 
-import com.nh.haiyan.ordermanager.filter.ShiroExceptionFilter;
+import com.nh.haiyan.ordermanager.config.filter.ShiroExceptionFilter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;

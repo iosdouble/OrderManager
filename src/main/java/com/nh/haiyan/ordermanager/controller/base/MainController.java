@@ -1,9 +1,9 @@
-package com.nh.haiyan.ordermanager.pages.controller.base;
+package com.nh.haiyan.ordermanager.controller.base;
 
 import com.nh.haiyan.ordermanager.bean.Admin;
 import com.nh.haiyan.ordermanager.bean.Menu;
 import com.nh.haiyan.ordermanager.mybatis.model.MenuTree;
-import com.nh.haiyan.ordermanager.pages.service.base.MenuService;
+import com.nh.haiyan.ordermanager.service.base.MenuService;
 import com.nh.haiyan.ordermanager.shiro.ShiroUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

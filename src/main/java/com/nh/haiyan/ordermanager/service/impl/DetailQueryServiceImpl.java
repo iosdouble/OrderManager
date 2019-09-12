@@ -1,9 +1,8 @@
-package com.nh.haiyan.ordermanager.pages.service.impl;
+package com.nh.haiyan.ordermanager.service.impl;
 
-import com.nh.haiyan.ordermanager.bean.GetAllDetailResp;
-import com.nh.haiyan.ordermanager.bean.GetAllResApplyResp;
+import com.nh.haiyan.ordermanager.mybatis.model.GetAllDetailResp;
 import com.nh.haiyan.ordermanager.mybatis.dao.mapper.DetailQueryMapper;
-import com.nh.haiyan.ordermanager.pages.service.DetailQueryService;
+import com.nh.haiyan.ordermanager.service.DetailQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +21,10 @@ public class DetailQueryServiceImpl implements DetailQueryService {
     public List<GetAllDetailResp> listAllResDetail(Long orderId) {
         List<GetAllDetailResp> result = detailQueryMapper.getDetailById(orderId);
         return result;
+    }
+
+    @Override
+    public List<GetAllDetailResp> getAllResDetail() {
+        return detailQueryMapper.getAllDetail();
     }
 }

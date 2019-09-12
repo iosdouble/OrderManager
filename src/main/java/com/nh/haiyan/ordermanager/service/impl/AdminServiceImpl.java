@@ -1,8 +1,8 @@
-package com.nh.haiyan.ordermanager.pages.service.impl;
+package com.nh.haiyan.ordermanager.service.impl;
 
 import com.nh.haiyan.ordermanager.bean.Admin;
 import com.nh.haiyan.ordermanager.mybatis.dao.mapper.AdminMapper;
-import com.nh.haiyan.ordermanager.pages.service.AdminService;
+import com.nh.haiyan.ordermanager.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

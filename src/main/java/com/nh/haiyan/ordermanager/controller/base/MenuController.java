@@ -1,10 +1,9 @@
-package com.nh.haiyan.ordermanager.pages.controller.base;
+package com.nh.haiyan.ordermanager.controller.base;
 
 import com.nh.haiyan.ordermanager.bean.Menu;
 import com.nh.haiyan.ordermanager.mybatis.model.MenuTree;
-import com.nh.haiyan.ordermanager.pages.service.base.MenuService;
+import com.nh.haiyan.ordermanager.service.base.MenuService;
 import com.nh.haiyan.ordermanager.utils.ReturnUtil;
-import lombok.RequiredArgsConstructor;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;

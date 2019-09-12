@@ -1,7 +1,7 @@
-package com.nh.haiyan.ordermanager.pages.service;
+package com.nh.haiyan.ordermanager.service;
 
 import com.github.pagehelper.PageInfo;
-import com.nh.haiyan.ordermanager.bean.GetAllResApplyResp;
+import com.nh.haiyan.ordermanager.mybatis.model.GetAllResApplyResp;
 import com.nh.haiyan.ordermanager.bean.QueryServiceParam;
 
 import java.util.List;

@@ -14,7 +14,8 @@ var TableInit = function () {
     oTableInit.Init = function () {
         //指定操作表
         $('#appDetailRecords').bootstrapTable({
-            url: '/detailQuery/getDetailInfo',   //请求后台的URL（*）
+            // url: '/detailQuery/getDetailInfo',   //请求后台的URL（*）
+            url: '/detailQuery/getAllInfo',   //请求后台的URL（*）
             method: 'get',                      //请求方式（*）
             toolbar: '#toolbar',                //工具按钮用哪个容器
             striped: true,                      //是否显示行间隔色
@@ -22,7 +23,7 @@ var TableInit = function () {
             pagination: true,                   //是否显示分页（*）
             sortable: false,                     //是否启用排序
             sortOrder: "asc",                   //排序方式
-            queryParams: oTableInit.queryParams,//传递参数（*）
+            // queryParams: oTableInit.queryParams,//传递参数（*）
             sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,                       //初始化加载第一页，默认第一页
             pageSize: 10,                       //每页的记录行数（*）
@@ -42,15 +43,21 @@ var TableInit = function () {
                 {
                     field: 'id',
                     title: '工单号'
-                }, {
+                },
+                {
+                    field: 'ids',
+                    title: '资源编号'
+                },
+                {
                     field: 'detail',
-                    title: '工单类型'
+                    title: '工单详情'
                 },
                 {
                     field: 'result',
-                    title: '申请人'
+                    title: '操作结果'
                 }]
         });
+
     };
     //得到查询的参数
     oTableInit.queryParams = function (params) {
@@ -78,5 +85,6 @@ var ButtonInit = function () {
             $("#appDetailRecords").bootstrapTable('refreshOptions', {pageNumber: 1, pageSize: 10});
         });
     };
+    console.log(oInit)
     return oInit;
 };

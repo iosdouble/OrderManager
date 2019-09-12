@@ -75,12 +75,6 @@ var ButtonInit = function () {
                 toastr.warning('工单号不能为空！');
                 return;
             }
-            // var endDate = $("#endDate_input").val();
-            // if (endDate == null || endDate.length == 0) {
-            //     toastr.warning('终止时间不能为空！');
-            //     return;
-            // }
-//    		 $("#journalRecords").bootstrapTable('refresh');
             $("#appDetailRecords").bootstrapTable('refreshOptions', {pageNumber: 1, pageSize: 10});
         });
     };

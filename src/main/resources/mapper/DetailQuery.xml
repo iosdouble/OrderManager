@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nh.haiyan.ordermanager.mybatis.dao.mapper.DetailQueryMapper">
 
-    <select id="getDetailById" parameterType="Long" resultType="com.nh.haiyan.ordermanager.bean.GetAllResApplyResp">
+    <select id="getDetailById" parameterType="Long" resultType="com.nh.haiyan.ordermanager.bean.GetAllDetailResp">
 		select id,ids,detail,result from(
             select id, module_app_deploy_res_id as ids, detail, result from module_app_deploy_res_detail
 			UNION

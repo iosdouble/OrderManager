@@ -11,4 +11,5 @@ public class GetAllDetailResp extends AbsJsonResp {
     private Long ids;
     private String detail;
     private String result;
+    private String applyUserDomainAccount;
 }

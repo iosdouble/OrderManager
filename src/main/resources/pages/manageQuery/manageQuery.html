@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="header">
+</head>
+<body>
+	<section class="content table-content">
+		<h2 class="sub-header">工单查询</h2>
+		<label class="control-label" for="mid">工单分组</label>
+		<div>
+			<input class="selectpicker form-control" style="width: 96%;display:inline;" data-live-search="true" id="mid" inputmode="">
+			<button id="btn_journalQuery" type="button" style="display:inline;height: 35px">查询</button>
+		</div>
+		<div class="table-responsive">
+			<table id="appManageRecords"
+				class="table table-bordered table-hover table-condensed flow-table-hover mon-table"
+				width="100%">
+			</table>
+		</div>
+	</section>
+	<div th:include="footer"></div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">查看详情</h4>
+				</div>
+				<div class="modal-body" id="ManageById">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script th:src="@{/js/manageQuery.js}"></script>
+</html>

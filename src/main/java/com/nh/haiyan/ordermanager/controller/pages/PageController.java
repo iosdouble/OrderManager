@@ -26,6 +26,11 @@ public class PageController {
         return "login";
     }
 
+    @RequestMapping("/manage")
+    public String manage(){
+        return "manageQuery/manageQuery";
+    }
+
     @RequestMapping("/control")
     public String control(){
         return "orderQuery/orderQuery";

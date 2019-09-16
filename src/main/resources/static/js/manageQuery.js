@@ -24,7 +24,7 @@ var TableInit = function () {
             sortable: false,                     //是否启用排序
             sortOrder: "asc",                   //排序方式
             // queryParams: oTableInit.queryParams,//传递参数（*）
-            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*）
+            sePagination: "client",           //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,                       //初始化加载第一页，默认第一页
             pageSize: 10,                       //每页的记录行数（*）
             pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
@@ -35,7 +35,7 @@ var TableInit = function () {
             minimumCountColumns: 2,             //最少允许的列数
             clickToSelect: true,                //是否启用点击选中行
             height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-            uniqueId: "id",                     //每一行的唯一标识，一般为主键列
+            unique: "",                     //每一行的唯一标识，一般为主键列
             showToggle: false,                    //是否显示详细视图和列表视图的切换按钮
             cardView: false,                    //是否显示详细视图
             detailView: false,                   //是否显示父子表
@@ -46,12 +46,12 @@ var TableInit = function () {
                 },
                 {
                     field: 'moduleName',
-                    width: '60px',
+                    width: '120px',
                     title: '名称'
                 },
                 {
                     field: 'sceneName',
-                    width: '280px',
+                    wth: '360px',
                     title: '审批状态'
                 },
                 {
@@ -71,38 +71,37 @@ var TableInit = function () {
         var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
             limit: params.limit,   //页面大小
             offset: params.offset,  //页码
-            orderId:$("#mid").val()
+            order:$("#mid").val()
         };
         return temp;
-        console.log("获取到工单号"+temp.orderId)
+        console.log("获取到工单号"+temp.order)
     };
     return oTableInit;
 };
 
 function operateFormatter(value, row, index) {
-    return [ '<button class="RoleOfedit btn btn-primary btn-sm" data-toggle="modal" onclick= \'see("+row.id+")\' data-target="#myModal" style="display:inline">查看</button>',].join('');
-
+    console.log("获取到好多:"+row.id)
+    $('#getManage').bootstrapTable({
+        url:'/manageQuery/getManageById/'+row.id,
+        method: 'get',
+        height: 250,
+        columns: [
+            {
+                field: 'title',
+                title: '标题'
+            },
+        ]
+    })
+    return [ '<button class="RoleOfedit btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" style="display:inline">查看</button>',].join('');
 }
-/*
-
-查看详情
-
-function see(id) {
-    $.ajax({
-        type:"select",
-        url : "/manageQuery/getManageInfo/"+id,
-        dataType:JSON,
-        async:false,
-    });
-}*/
 var ButtonInit = function () {
     var oInit = new Object();
     var postdata = {};
     oInit.Init = function () {
         $("#btn_detailQuery").click(function () {
-            var orderId = $("#did").val();
-            console.log("获取到的工单号"+orderId)
-            if (orderId == null || orderId.length == 0) {
+            var order = $("#d").val();
+            console.log("获取到的工单号"+order)
+            if (order == null || orderId.length == 0) {
                 toastr.warning('工单号不能为空！');
                 return;
             }

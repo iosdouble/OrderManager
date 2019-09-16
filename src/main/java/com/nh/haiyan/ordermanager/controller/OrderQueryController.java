@@ -27,7 +27,7 @@ public class OrderQueryController {
 
     @RequestMapping("/getInfoBymoduleTyep")
     public @ResponseBody
-    List<GetAllResApplyResp> pageAllResApplies(Long orderId){
+    List<GetAllResApplyResp> pageAllResApplies(String orderId){
 
 //        PageInfo<GetAllResApplyResp> pageInfo =null;
 ////        pageInfo = newOrderQueryService.pageAllResApplies(orderId,1,10);

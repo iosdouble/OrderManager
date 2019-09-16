@@ -7,10 +7,10 @@ import java.util.List;
 
 public interface NewOrderQueryService {
 
-    GetAllResApplyResp getOrderById(Long id);
+    GetAllResApplyResp getOrderById(String id);
 
-    List<GetAllResApplyResp> listAllResApplies(Long orderId);
+    List<GetAllResApplyResp> listAllResApplies(String orderId);
 
-    PageInfo<GetAllResApplyResp> pageAllResApplies(Long orderId, int offset, int limit);
+    PageInfo<GetAllResApplyResp> pageAllResApplies(String orderId, int offset, int limit);
 
 }

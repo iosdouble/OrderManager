@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Mapper
 public interface OrderQueryMapper {
-    List<GetAllResApplyResp> getOrderById(Long orderId);
+    List<GetAllResApplyResp> getOrderById(String orderId);
 
     List<GetAllResApplyResp> getAllOrder();
 }

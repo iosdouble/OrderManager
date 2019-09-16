@@ -18,7 +18,7 @@ public class ManageQueryServiceImpl implements ManageQueryService {
     private ManageQueryMapper manageQueryMapper;
 
     @Override
-    public List<GetAllManageResp> getManageById(Long id) {
+    public List<GetAllManageResp> getManageById(String id) {
         List<GetAllManageResp> result = manageQueryMapper.getManageById(id);
         return result;
     }

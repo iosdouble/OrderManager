@@ -17,7 +17,7 @@ import java.util.Date;
 public class GetAllResApplyResp extends AbsJsonResp {
 
 
-    private Long resApplyId;
+    private String resApplyId;
     private Long applyUserCode;
     private String applyUserName;
     private Date applyDataTime;

@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface ManageQueryMapper {
 
-    List<GetAllManageResp> getManageById(Long id);
+    List<GetAllManageResp> getManageById(String id);
 
     List<GetAllManageResp> getManageAll();
 

@@ -10,7 +10,7 @@ import java.util.Date;
 @Setter
 public class GetAllManageResp extends AbsJsonResp {
 
-    private Long id;
+    private String id;
     private String moduleName;
     private String sceneCode;
     private String sceneName;

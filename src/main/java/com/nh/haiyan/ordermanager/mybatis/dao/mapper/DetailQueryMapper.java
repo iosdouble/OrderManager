@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface DetailQueryMapper {
-    List<GetAllDetailResp> getDetailById(Long id);
+    List<GetAllDetailResp> getDetailById(String id);
 
     List<GetAllDetailResp> getAllDetail();
 }

@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class GetAllDetailResp extends AbsJsonResp {
-    private Long id;
+    private String id;
     private Long ids;
     private String detail;
     private String result;

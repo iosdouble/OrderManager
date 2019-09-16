@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ManageQueryService {
 
-    List<GetAllManageResp> getManageById(Long id);
+    List<GetAllManageResp> getManageById(String id);
 
     List<GetAllManageResp> getManageAll();
 

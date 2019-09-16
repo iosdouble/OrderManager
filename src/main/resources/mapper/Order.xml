@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nh.haiyan.ordermanager.mybatis.dao.mapper.OrderQueryMapper">
 
-    <select id="getOrderById" parameterType="Long" resultType="com.nh.haiyan.ordermanager.mybatis.model.GetAllResApplyResp">
+    <select id="getOrderById" parameterType="String" resultType="com.nh.haiyan.ordermanager.mybatis.model.GetAllResApplyResp">
 
       select id resApplyId, apply_user_code applyUserCode, apply_user_name applyUserName, apply_date_time applyDateTime, apply_status applyStatus, moduleType, dept_code deptCode
 	    from(

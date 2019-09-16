@@ -7,7 +7,7 @@ import java.util.List;
 public interface DetailQueryService {
     GetAllDetailResp getDetailById(Long id);
 
-    List<GetAllDetailResp> listAllResDetail(Long orderId);
+    List<GetAllDetailResp> listAllResDetail(String orderId);
 
     List<GetAllDetailResp> getAllResDetail();
 }

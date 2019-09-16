@@ -17,18 +17,18 @@ public class NewOrderQueryServiceImpl implements NewOrderQueryService {
     private OrderQueryMapper orderQueryMapper;
 
     @Override
-    public GetAllResApplyResp getOrderById(Long id) {
+    public GetAllResApplyResp getOrderById(String id) {
         return null;
     }
 
     @Override
-    public List<GetAllResApplyResp> listAllResApplies(Long orderId) {
+    public List<GetAllResApplyResp> listAllResApplies(String orderId) {
         List<GetAllResApplyResp> result = orderQueryMapper.getOrderById(orderId);
         return result;
     }
 
     @Override
-    public PageInfo<GetAllResApplyResp> pageAllResApplies(Long orderId, int offset, int limit) {
+    public PageInfo<GetAllResApplyResp> pageAllResApplies(String orderId, int offset, int limit) {
         PageHelper.offsetPage(offset,limit);
         List<GetAllResApplyResp> result = listAllResApplies(orderId);
         PageInfo<GetAllResApplyResp> pageInfo = new PageInfo<>(result);

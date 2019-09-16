@@ -18,7 +18,7 @@ public class DetailQueryServiceImpl implements DetailQueryService {
     }
 
     @Override
-    public List<GetAllDetailResp> listAllResDetail(Long orderId) {
+    public List<GetAllDetailResp> listAllResDetail(String orderId) {
         List<GetAllDetailResp> result = detailQueryMapper.getDetailById(orderId);
         return result;
     }

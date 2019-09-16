@@ -18,7 +18,7 @@ public class DetailQueryController {
 
     @RequestMapping("/getDetailInfo")
     public @ResponseBody
-    List<GetAllDetailResp> getAllDetail(Long orderId) {
+    List<GetAllDetailResp> getAllDetail(String orderId) {
         List<GetAllDetailResp> list = detailQueryService.listAllResDetail(orderId); //根据id查询到对象数据
         //GetAllDetailResp detail = JsonUtil.toObject(list1,GetAllDetailResp.class); //将detail的字符串转化为detail对象
         //System.out.println(detail.getApplyUserDomainAccount()+"wwwww");

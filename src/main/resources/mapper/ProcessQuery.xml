@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nh.haiyan.ordermanager.mybatis.dao.mapper.ProcessQueryMapper">
+
+    <select id="getProcessById" parameterType="String" resultType="com.nh.haiyan.ordermanager.mybatis.model.GetAllProcessResp">
+		select id,resApplyId,stepName,stepStatus,startTime,endTime,description,domainAccount,cnName,userEmail,isDelete from(
+            select id, module_app_deploy_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_app_deploy_res_apply_flow
+			UNION
+			select id, module_cdn_cache_clean_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_cdn_cache_clean_res_apply_flow
+			union
+			select id, module_cdn_link_up_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_cdn_link_up_res_apply_flow
+			union
+			select id, module_code_auth_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_code_auth_res_apply_flow
+			union
+			select id, module_code_scan_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_code_scan_res_apply_flow
+			union
+			select id, module_custom_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_custom_res_apply_flow
+			union
+			select id, module_db_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_db_res_apply_flow
+			union
+			select id, module_deploy_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_deploy_res_apply_flow
+			union
+			select id, module_dns_analyze_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_dns_analyze_res_apply_flow
+			union
+			select id, module_domain_account_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_domain_account_res_apply_flow
+			union
+			select id, module_domain_high_defense_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_name as cnName,
+            check_user_cn_email as userEmail,is_deleted as isDelete from module_domain_high_defense_res_apply_flow
+			union
+			select id, module_domain_scan_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_domain_scan_res_apply_flow
+			union
+			select id, module_fortress_machine_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_fortress_machine_res_apply_flow
+			union
+			select id, module_hostscan_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_hostscan_res_apply_flow
+			union
+			select id, module_kvm_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_kvm_res_apply_flow
+			union
+			select id, module_net_security_policy_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_net_security_policy_res_apply_flow
+			union
+			select id, module_nginx_conf_update_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_nginx_conf_update_res_apply_flow
+			union
+			select id, module_port_scan_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_port_scan_res_apply_flow
+			union
+			select id, module_vip_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_vip_res_apply_flow
+			union
+			select id, module_vpn_post_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_vpn_post_res_apply_flow
+
+		)tmp where tmp.resApplyId = #{resApplyId}
+
+    </select>
+
+	<select id="getProcessInfo" resultType="com.nh.haiyan.ordermanager.mybatis.model.GetAllProcessResp">
+        select id,resApplyId,stepName,stepStatus,startTime,endTime,description,domainAccount,cnName,userEmail,isDelete from(
+            select id, module_app_deploy_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_app_deploy_res_apply_flow
+			UNION
+			select id, module_cdn_cache_clean_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_cdn_cache_clean_res_apply_flow
+			union
+			select id, module_cdn_link_up_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_cdn_link_up_res_apply_flow
+			union
+			select id, module_code_auth_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_code_auth_res_apply_flow
+			union
+			select id, module_code_scan_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_code_scan_res_apply_flow
+			union
+			select id, module_custom_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_custom_res_apply_flow
+			union
+			select id, module_db_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_db_res_apply_flow
+			union
+			select id, module_deploy_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_deploy_res_apply_flow
+			union
+			select id, module_dns_analyze_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_dns_analyze_res_apply_flow
+			union
+			select id, module_domain_account_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_domain_account_res_apply_flow
+			union
+			select id, module_domain_high_defense_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_name as cnName,
+            check_user_cn_email as userEmail,is_deleted as isDelete from module_domain_high_defense_res_apply_flow
+			union
+			select id, module_domain_scan_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_domain_scan_res_apply_flow
+			union
+			select id, module_fortress_machine_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_fortress_machine_res_apply_flow
+			union
+			select id, module_hostscan_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_hostscan_res_apply_flow
+			union
+			select id, module_kvm_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_kvm_res_apply_flow
+			union
+			select id, module_net_security_policy_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_net_security_policy_res_apply_flow
+			union
+			select id, module_nginx_conf_update_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_nginx_conf_update_res_apply_flow
+			union
+			select id, module_port_scan_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_port_scan_res_apply_flow
+			union
+			select id, module_vip_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_vip_res_apply_flow
+			union
+			select id, module_vpn_post_res_apply_id as resApplyId,step_name as stepName,step_status as stepStatus,start_date_time as startTime,
+            end_date_time as endTime,description,check_user_domain_account as domainAccount,check_user_cn_name as cnName,
+            check_user_email as userEmail,is_deleted as isDelete from module_vpn_post_res_apply_flow
+
+		)tmp
+    </select>
+
+
+</mapper>

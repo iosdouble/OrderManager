@@ -10,6 +10,8 @@ public interface ManageQueryMapper {
 
     List<GetAllManageResp> getManageById(String id);
 
+    List<GetAllManageResp> getManageByOrderId(String id);
+
     List<GetAllManageResp> getManageAll();
 
 }

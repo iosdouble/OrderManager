@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="header">
+</head>
+<body>
+	<section class="content table-content">
+		<h2 class="sub-header">工单查询</h2>
+		<label class="control-label" for="pid">工单分组</label>
+		<div>
+			<input class="selectpicker form-control" style="width: 96%;display:inline;" data-live-search="true" id="pid" inputmode="">
+			<button id="btn_ProcessQuery" type="button" style="display:inline;height: 35px">查询</button>
+		</div>
+		<div class="table-responsive">
+			<table id="getProcess"
+				class="table table-bordered table-hover table-condensed flow-table-hover mon-table"
+				width="100%">
+			</table>
+		</div>
+	</section>
+	<!--<div class="progress">
+		<div class="progress-bar progress-bar-success" style="width: 35%">
+			<span class="sr-only">35% Complete (success)</span>
+		</div>
+		<div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+			<span class="sr-only">20% Complete (warning)</span>
+		</div>
+		<div class="progress-bar progress-bar-danger" style="width: 10%">
+			<span class="sr-only">10% Complete (danger)</span>
+		</div>
+	</div>-->
+	<div th:include="footer"></div>
+	<div class="modal fade" id="myModals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">查看详情</h4>
+				</div>
+				<div class="progress">
+					<div id="oneStep" class="progress-bar progress-bar-success" style="width: 25%">
+							<span>25% Complete (success)</span>
+					</div>
+					<div id="twoStep" class="progress-bar progress-bar-success" style="width: 25%">
+						<span class="sr-only">25% Complete (success)</span>
+					</div>
+					<div id="threeStep" class="progress-bar progress-bar-success" style="width: 25%">
+						<span class="sr-only">25% Complete (success)</span>
+					</div>
+					<div id="fourStep" class="progress-bar progress-bar-success" style="width: 25%">
+						<span class="sr-only">25% Complete (success)</span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script th:src="@{/js/processQuery.js}"></script>
+</html>

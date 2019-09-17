@@ -24,6 +24,12 @@ public class ManageQueryController {
         return resp;
     }
 
+    @RequestMapping("/getManageByOrderId/{id}")
+    public @ResponseBody List<GetAllManageResp> getManageByOrderId(@PathVariable String id){
+        List<GetAllManageResp> resp = manageQueryService.getManageByOrderId(id);
+        return resp;
+    }
+
     @RequestMapping("/getManageInfo")
     public  @ResponseBody
     List<GetAllManageResp> getAllManage(Model model){

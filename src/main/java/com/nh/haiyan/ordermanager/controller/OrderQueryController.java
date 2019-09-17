@@ -16,15 +16,6 @@ public class OrderQueryController {
     @Autowired
     private NewOrderQueryService newOrderQueryService;
 
-//    @GetMapping("/getOrderById/{id}")
-//    public String getOrderQueryById(@PathVariable Long id,  Model model){
-//        GetAllResApplyResp getAllResApplyResp = newOrderQueryService.getOrderById(id);
-//        model.addAttribute("orderQuery",getAllResApplyResp);
-//        System.out.println("获取到的信息为："+getAllResApplyResp);
-//        return "../pages/orderQuery/orderQuery";
-//    }
-
-
     @RequestMapping("/getInfoBymoduleTyep")
     public @ResponseBody
     List<GetAllResApplyResp> pageAllResApplies(String orderId){

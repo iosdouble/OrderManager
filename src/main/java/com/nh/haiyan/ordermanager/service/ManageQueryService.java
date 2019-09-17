@@ -9,6 +9,8 @@ public interface ManageQueryService {
 
     List<GetAllManageResp> getManageById(String id);
 
+    List<GetAllManageResp> getManageByOrderId(String id);
+
     List<GetAllManageResp> getManageAll();
 
 

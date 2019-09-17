@@ -31,6 +31,11 @@ public class PageController {
         return "manageQuery/manageQuery";
     }
 
+    @RequestMapping("/process")
+    public String process(){
+        return "processQuery/processQuery";
+    }
+
     @RequestMapping("/control")
     public String control(){
         return "orderQuery/orderQuery";

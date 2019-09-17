@@ -2,11 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nh.haiyan.ordermanager.mybatis.dao.mapper.ManageQueryMapper">
 
+	<!--根据id查询-->
 	<select id="getManageById" parameterType="String" resultType="com.nh.haiyan.ordermanager.mybatis.model.GetAllManageResp">
 		select id,module_name as moduleName,scene_code as sceneCode,scene_name as sceneName,title,order_id as ids,to_addresses as toAddress,
 		detail,send_date_time as time,status,error_reason as reason from adapter_email_log where id = #{id}
     </select>
 
+	<!--根据order_id查询-->
+	<select id="getManageByOrderId" parameterType="String" resultType="com.nh.haiyan.ordermanager.mybatis.model.GetAllManageResp">
+		select id,module_name as moduleName,scene_code as sceneCode,scene_name as sceneName,title,order_id as ids,to_addresses as toAddress,
+		detail,send_date_time as time,status,error_reason as reason from adapter_email_log where order_id = #{order_id}
+    </select>
+
+	<!--查询所有-->
 	<select id="getManageAll" resultType="com.nh.haiyan.ordermanager.mybatis.model.GetAllManageResp">
 		select id,module_name as moduleName,scene_code as sceneCode,scene_name as sceneName,title,order_id as dis,to_addresses as toAddress,
 		detail,send_date_time as time,status,error_reason as reason from adapter_email_log
